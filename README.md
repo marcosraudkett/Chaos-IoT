@@ -10,10 +10,10 @@ tosiaan koodissa on myös käytetty epäturvallisia methodeja mutta jos aiot kä
 myös salasanat pitäsi hashata seuraavasti rekisteröitymis sivulla: Hash::$_POST["pass"]); ja myöhemmin decryptaa kirjautumissivulla kun tarkistaa että salasana on lisätty oikein. Kun tällä hetkellä siinä on vain: $_POST["pass"];
 
 ja myös estääkseen SQL Injectioniä pitää myös suojata seuraavasti jokaisessa tietokanta lisäys koodissa:
-> $activate = $_GET["status"];
-pitäisi muutaa seuraavaksi:
-> $activate_html = htmlspecialchars(isset($_GET["status"]) ? $_GET["status"] : "");
-> $activate = str_replace("'", "&#39;", $activate_html);
++ $activate = $_GET["status"];
+> pitäisi muutaa seuraavaksi:
++ $activate_html = htmlspecialchars(isset($_GET["status"]) ? $_GET["status"] : "");
++ $activate = str_replace("'", "&#39;", $activate_html);
 
 tämä ylhäällä oleva koodi estää käyttäjän lisämällä epämääräisiä koodeja input kenttiin eli:
 vaihtaa html koodin teksimuodoksi ja vaihtaa ' merkin &#39; mikä meinaa että se näyttää -> ' mutta se on teksimuodossa.. (?)
