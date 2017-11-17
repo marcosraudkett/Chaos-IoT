@@ -1,0 +1,14 @@
+Options +FollowSymLinks -MultiViews -Indexes
+RewriteEngine On
+#RewriteBase /
+
+RewriteRule ^home/?$ index.php
+RewriteRule ^signin/?$ signin.php 
+RewriteRule ^signup/?$ signup.php
+RewriteRule ^out/?$ logout.php
+RewriteRule ^user/?$ manage.php
+RewriteRule ^remote/?$ shell.php
+
+RewriteRule ^service-fast/?$ fastsend.php
+
+#ErrorDocument 404 /404.php
