@@ -6,8 +6,8 @@ Jos haluat muuttaa koodin sopivaksi uudemmaks versioks niin tulee koodista vaiht
 kaikki mysql tulisi vaihtaa mysqli tai PDO menetelmäksi koska mysql on vanheutunutta versiotta ja toimii vain >5.4 versioissa ja on kokonaan poistettu 7.0 versiossa. 
 ja jos tietokanta on uudempi kuin 5.5.51-38.1 niin pitää myös lähes kaikkiin muihin paitsi ID kohtiin myös vaihtaa null = null.
 
-tosiaan koodissa on myös käytetty epäturvallisia methodeja mutta jos aiot käyttää tätä niin suositeltava myös vaihtaa kirjautumis menetelmä erillaiseksi esimerkiksi luomaan tietokantaan secret key kenttä ja käyttämällä sitä eikä tallentamalla username ja password kekseiksi (?).
-myös salasanat pitäsi hashata seuraavasti rekisteröitymis sivulla: MD5($_POST["pass"]); ja myöhemmin decryptaa kirjautumissivulla kun tarkistaa että salasana on lisätty oikein. Kun tällä hetkellä siinä on vain: $_POST["pass"];
+tosiaan koodissa on myös käytetty epäturvallisia methodeja mutta jos aiot käyttää tätä niin suositeltava myös vaihtaa kirjautumis menetelmä erillaiseksi esimerkiksi luomaan tietokantaan secret key/session key kenttä ja käyttämällä sitä eikä tallentamalla username ja password kekseiksi (?).
+myös salasanat pitäsi hashata seuraavasti rekisteröitymis sivulla: Hash::$_POST["pass"]); ja myöhemmin decryptaa kirjautumissivulla kun tarkistaa että salasana on lisätty oikein. Kun tällä hetkellä siinä on vain: $_POST["pass"];
 
 ja myös estääkseen SQL Injectioniä pitää myös suojata seuraavasti jokaisessa tietokanta lisäys koodissa:
 > $activate = $_GET["status"];
