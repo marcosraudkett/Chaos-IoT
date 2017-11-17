@@ -41,7 +41,7 @@ tai sitten db.php tiedostoon mutta ei ehkä paras idea.
 
 
 
-# Lisää esimerkkejä:
+# MySQLi <5.4 PHP
 
 Koodi:
 > mysql_query("SELECT * FROM users WHERE email='$email'");
