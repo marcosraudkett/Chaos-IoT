@@ -58,7 +58,3 @@ tulisi vaihtaa seuraavaksi:
 
 
 jos sivuston selaus ei toimi niin katsothan .htaccess tiedostoa mistä löytyy koodien/scriptien oikeat osoitteet/kansiot.
-
-
-Marcos Raudkett
-projects@marcosraudkett.com
